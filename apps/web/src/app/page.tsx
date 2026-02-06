@@ -1,11 +1,10 @@
 "use client";
 
-
 import {
   FileSpreadsheet,
   ArrowRight,
   Github,
-  GitPullRequest
+  GitPullRequest,
 } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { ConvertDialog } from "@/components/convert-dialog";
@@ -24,6 +23,7 @@ export default function LandingPage() {
           </div>
           <span>PrepExport</span>
         </div>
+
         <div className="flex items-center gap-4">
           <a
             href="https://github.com/devlpr-nitish/PreExport"
@@ -38,20 +38,26 @@ export default function LandingPage() {
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <main className="flex-1 flex flex-col items-center justify-center text-center px-6 max-w-4xl mx-auto -mt-20">
-        <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-bold uppercase tracking-wider mb-6 border border-primary/20">
-          <GitPullRequest className="w-3 h-3" /> Open Source & Community Driven
+      <div className="flex justify-center -mt-4">
+        <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-bold uppercase tracking-wider border border-primary/20">
+          <GitPullRequest className="w-3 h-3" />
+          Open Source & Community Driven
         </div>
+      </div>
 
+      {/* Hero Section */}
+      <main className="flex-1 flex flex-col items-center justify-center text-center px-6 max-w-4xl mx-auto">
         <h1 className="text-5xl sm:text-7xl font-extrabold tracking-tight mb-8 text-foreground leading-tight">
           Export DSA Sheets <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-amber-600">Anywhere.</span>
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-amber-600">
+            Anywhere.
+          </span>
         </h1>
 
         <p className="text-xl sm:text-2xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">
-          The open-source tool to convert Striver, Love Babbar, and other DSA latest updated sheets into
-          <strong> Excel</strong>, <strong> Markdown</strong>, or <strong> Notion</strong>.
+          The open-source tool to convert Striver, Love Babbar, and other DSA
+          latest updated sheets into <strong>Excel</strong>,{" "}
+          <strong>Markdown</strong>, or <strong>Notion</strong>.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
@@ -61,6 +67,7 @@ export default function LandingPage() {
           >
             Get Excel Sheet <ArrowRight className="w-5 h-5" />
           </button>
+
           <a
             href="https://github.com/devlpr-nitish/PreExport"
             target="_blank"
@@ -71,11 +78,15 @@ export default function LandingPage() {
           </a>
         </div>
 
-        <ConvertDialog isOpen={isDialogOpen} onClose={() => setIsDialogOpen(false)} />
+        <ConvertDialog
+          isOpen={isDialogOpen}
+          onClose={() => setIsDialogOpen(false)}
+        />
 
         <div className="mt-16 flex flex-wrap justify-center gap-8 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
-          {/* Placeholder for logos or just text */}
-          <div className="text-sm font-semibold text-muted-foreground">Supported Formats:</div>
+          <div className="text-sm font-semibold text-muted-foreground">
+            Supported Formats:
+          </div>
           <div className="text-sm font-bold text-foreground">Excel .xlsx</div>
           <div className="text-sm font-bold text-foreground">Markdown .md</div>
           <div className="text-sm font-bold text-foreground">Notion .csv</div>
