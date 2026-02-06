@@ -1,8 +1,6 @@
 # PrepExport
 
-**Open Source tool to convert DSA Sheets (Striver, etc.) into Excel, Markdown, Notion/CSV.
-
-![DSA Sheet Exporter Hero](/apps/web/public/hero.png)
+**Open Source tool to convert DSA Sheets (Striver, etc.) into Excel, Markdown, Notion/CSV.**
 
 ## Features
 - **Multi-Format Export**: Get your problems in Excel (.xlsx), Markdown (.md), or CSV (for Notion/GDocs).
