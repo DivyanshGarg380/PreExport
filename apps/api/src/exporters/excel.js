@@ -87,7 +87,7 @@ export async function exportExcel(data, extraColumns = [], { metadata, options }
             cell.fill = {
                 type: 'pattern',
                 pattern: 'solid',
-                fgColor: { argb: 'FFD1C4E9' } // Light Purple for distinction
+                fgColor: { argb: 'A9A9A9' } // Light Purple for distinction
             };
 
             // Apply style to data cells in these columns
@@ -96,7 +96,7 @@ export async function exportExcel(data, extraColumns = [], { metadata, options }
                 dataCell.fill = {
                     type: 'pattern',
                     pattern: 'solid',
-                    fgColor: { argb: 'FFF3E5F5' } // Very light purple
+                    fgColor: { argb: '808080' } // Very light purple
                 };
             }
         }
@@ -105,7 +105,7 @@ export async function exportExcel(data, extraColumns = [], { metadata, options }
     // 5. Branding Footer
     const footerRowIdx = lastDataRowIdx + 2;
     const footerRow = sheet.getRow(footerRowIdx);
-    footerRow.getCell(1).value = "Exported with PrepExport - https://prepexport.com";
+    footerRow.getCell(1).value = "Exported with PrepExport - https://pre-export.vercel.app/";
     footerRow.font = { italic: true, color: { argb: 'FF888888' } };
     sheet.mergeCells(`A${footerRowIdx}:D${footerRowIdx}`);
 
