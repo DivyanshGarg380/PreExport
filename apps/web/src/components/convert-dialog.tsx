@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { API_BASE_URL } from "@/lib/api";
 import { Download, Loader2, X, Plus, Trash2, Filter, Eye } from "lucide-react";
 
 interface Sheet {
@@ -44,7 +45,7 @@ export function ConvertDialog({ isOpen, onClose }: ConvertDialogProps) {
 
     useEffect(() => {
         if (isOpen && sheets.length === 0) {
-            fetch("http://localhost:8000/api/convert")
+            fetch(`${API_BASE_URL}/api/convert`)
                 .then((res) => res.json())
                 .then((data) => {
                     setSheets(data);
@@ -61,7 +62,7 @@ export function ConvertDialog({ isOpen, onClose }: ConvertDialogProps) {
             setPreviewData(null);
             setSelectedTopics([]); // Reset filters
 
-            fetch(`http://localhost:8000/api/convert/${selectedSheet}`)
+            fetch(`${API_BASE_URL}/api/convert/${selectedSheet}`)
                 .then(res => res.json())
                 .then(data => {
                     setPreviewData(data);
@@ -98,7 +99,7 @@ export function ConvertDialog({ isOpen, onClose }: ConvertDialogProps) {
         console.log("Sending convert request with extraColumns:", finalExtraColumns);
 
         try {
-            const response = await fetch("http://localhost:8000/api/convert", {
+            const response = await fetch(`${API_BASE_URL}/api/convert`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
