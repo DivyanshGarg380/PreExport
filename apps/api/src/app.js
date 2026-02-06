@@ -4,7 +4,11 @@ import convertRoutes from "./routes/convert.route.js";
 
 const app = express();
 
-app.use(cors());
+const corsOptions = {
+  origin: process.env.ENVIR === "production" ? "https://pre-export.vercel.app" : "*"
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 
 app.use("/api/convert", convertRoutes);
